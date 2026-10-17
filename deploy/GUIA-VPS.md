@@ -42,7 +42,7 @@ apt-get update -y && apt-get install -y git
 ### 2b. Clonar o projeto (você terá a URL do GitHub no passo 4 do lado do Windows)
 ```bash
 mkdir -p /var/www && cd /var/www
-git clone https://github.com/SEU_USUARIO/parking-recife.git
+git clone https://github.com/amplatecnologiarecife/parkingrecife.git parking-recife
 cd parking-recife
 ```
 
