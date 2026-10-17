@@ -103,3 +103,19 @@ Invoke-RestMethod "$base/api/veiculos" -Method Post -Headers $h -ContentType "ap
   -Body '{"placa":"ABC1D23","modelo":"Onix","cor":"Prata"}'
 Invoke-RestMethod "$base/api/veiculos" -Headers $h
 ```
+
+## Publicar (producao)
+
+O projeto esta preparado para duas vias:
+
+- **Plataforma ligada ao GitHub** (Railway/Render): veja
+  [`deploy/GUIA-PLATAFORMA.md`](deploy/GUIA-PLATAFORMA.md).
+  O `render.yaml` e o `railway.json` ja configuram o arranque.
+- **VPS propria**: veja [`deploy/GUIA-VPS.md`](deploy/GUIA-VPS.md)
+  (`deploy/setup-vps.sh` e `deploy/nginx-parking.conf`).
+
+Variaveis de ambiente relevantes em producao:
+- `DATABASE_URL` (plataformas) ou `DB_HOST`/`DB_PORT`/`DB_USER`/`DB_PASSWORD`/`DB_NAME` (VPS)
+- `DB_SSL` (`true` quando a base gerida exige SSL)
+- `JWT_SECRET`, `PUBLIC_URL`
+- `ADMIN_EMAIL`/`ADMIN_PASSWORD` (criam o admin inicial quando a base esta vazia)

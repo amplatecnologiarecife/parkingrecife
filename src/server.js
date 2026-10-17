@@ -10,6 +10,7 @@ const rotasVeiculos = require('./routes/veiculos');
 const rotasTickets = require('./routes/tickets');
 const rotasRecibo = require('./routes/recibo');
 const rotasVerificar = require('./routes/verificar');
+const { garantirAdmin } = require('./lib/bootstrap');
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
@@ -40,6 +41,11 @@ app.use('/api/tickets', rotasTickets);
 app.use('/recibo', rotasRecibo);
 app.use('/verificar', rotasVerificar);
 
-app.listen(PORT, () => {
-  console.log(`Servidor do Parking Recife a correr em http://localhost:${PORT}`);
+app.listen(PORT, async () => {
+  console.log(`Servidor do Parking Recife a correr na porta ${PORT}`);
+  try {
+    await garantirAdmin();
+  } catch (erro) {
+    console.error('Aviso: nao foi possivel verificar o admin inicial:', erro.message);
+  }
 });
