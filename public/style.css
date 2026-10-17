@@ -1,0 +1,88 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f2f4f8;
+  color: #1f2937;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #14346b;
+  color: #fff;
+  padding: 16px 24px;
+}
+
+.topo h1 { font-size: 20px; margin: 0; }
+
+.area-usuario { font-size: 14px; display: flex; align-items: center; gap: 12px; }
+
+.conteudo { max-width: 960px; margin: 24px auto; padding: 0 16px; display: grid; gap: 20px; }
+
+.cartao {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.cartao h2 { margin: 0 0 16px; font-size: 17px; display: flex; align-items: center; gap: 12px; }
+
+.cartao-login { max-width: 380px; margin: 40px auto; }
+
+label { display: block; margin-bottom: 12px; font-size: 13px; color: #4b5563; }
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.linha-form { display: grid; grid-template-columns: 1.2fr 1.5fr 1fr auto; gap: 10px; align-items: start; }
+
+.botao {
+  background: #14346b;
+  color: #fff;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.botao:hover { background: #1d4a93; }
+.botao-claro { background: #e2e8f0; color: #14346b; font-size: 12px; padding: 6px 10px; }
+.botao-claro:hover { background: #cbd5e1; }
+.botao-linha { background: #b91c1c; padding: 8px 12px; font-size: 13px; }
+.botao-linha:hover { background: #991b1b; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #eef1f5; }
+th { font-size: 12px; text-transform: uppercase; color: #6b7280; }
+tbody tr:last-child td { border-bottom: none; }
+
+.erro { color: #b91c1c; font-size: 13px; min-height: 18px; margin: 8px 0 0; }
+.vazio { color: #6b7280; font-size: 14px; margin: 12px 0 0; }
+
+.oculto { display: none; }
+
+.aviso {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #14346b;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 720px) {
+  .linha-form { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking Recife</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <h1>Parking Recife</h1>
+    <div id="areaUsuario" class="area-usuario"></div>
+  </header>
+
+  <main class="conteudo">
+    <!-- Tela de login -->
+    <section id="telaLogin" class="cartao cartao-login">
+      <h2>Entrar</h2>
+      <form id="formLogin">
+        <label>Email
+          <input type="email" id="loginEmail" required placeholder="ana@parking.com" />
+        </label>
+        <label>Senha
+          <input type="password" id="loginSenha" required placeholder="********" />
+        </label>
+        <button type="submit" class="botao">Entrar</button>
+      </form>
+      <p id="loginErro" class="erro"></p>
+    </section>
+
+    <!-- Painel (escondido ate fazer login) -->
+    <section id="painel" class="oculto">
+      <div class="cartao">
+        <h2>Registar entrada</h2>
+        <form id="formEntrada" class="linha-form">
+          <input type="text" id="entPlaca" placeholder="Placa (ABC1D23)" required />
+          <input type="text" id="entModelo" placeholder="Modelo" />
+          <input type="text" id="entCor" placeholder="Cor" />
+          <button type="submit" class="botao">Registar entrada</button>
+        </form>
+        <p id="entradaErro" class="erro"></p>
+      </div>
+
+      <div class="cartao">
+        <h2>Veiculos no patio <button id="btnAtualizar" class="botao botao-claro">Atualizar</button></h2>
+        <table>
+          <thead>
+            <tr><th>Placa</th><th>Modelo</th><th>Cor</th><th>Entrada</th><th>Pagamento</th><th></th></tr>
+          </thead>
+          <tbody id="corpoVeiculos"></tbody>
+        </table>
+        <p id="veiculosVazio" class="vazio oculto">Nenhum veiculo no patio.</p>
+      </div>
+
+      <div class="cartao">
+        <h2>Ultimos tickets</h2>
+        <table>
+          <thead>
+            <tr><th>Placa</th><th>Valor</th><th>Saida</th><th>Pagamento</th><th></th></tr>
+          </thead>
+          <tbody id="corpoTickets"></tbody>
+        </table>
+        <p id="ticketsVazio" class="vazio oculto">Nenhum ticket emitido.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="aviso" class="aviso oculto"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

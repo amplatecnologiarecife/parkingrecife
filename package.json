@@ -1,0 +1,22 @@
+{
+  "name": "parking-recife",
+  "version": "1.0.0",
+  "description": "Parking Recife - backend do painel web (Etapa 1)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:schema": "node scripts/aplicar-schema.js",
+    "criar-admin": "node scripts/criar-admin.js"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.13.1",
+    "qrcode": "^1.5.4"
+  }
+}
